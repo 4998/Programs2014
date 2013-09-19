@@ -1,3 +1,4 @@
+#pragma config(Hubs,  S1, HTMotor,  HTMotor,  none,     none)
 #pragma config(Motor,  mtr_S1_C1_1,     motorD,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     motorE,        tmotorTetrix, openLoop, reversed)
 #pragma config(Motor,  mtr_S1_C2_1,     motorF,        tmotorTetrix, openLoop)
@@ -9,20 +10,13 @@
 //----------------------------- Initialization ------------------------------
 
 int motorSlow = 1;
-bool toggleArm = false;
-bool toggleSpool = false;
-bool toggleClaw = false;
-int motorSpeedA = 0;
+
 int motorSpeedD = 0;
 int motorSpeedE = 0;
-int motorSpeedF = 0;
-int motorSpeedG = 0;
 
 void initializeRobot() { //Initialize, setting all motors to a speed of 0.
 	motor[motorD] = 0;
 	motor[motorE] = 0;
-	motor[motorF] = 0;
-	motor[motorG] = 0;
 }
 
 //--------------------  Joystick 1 (Driver) Controls --------------------------
@@ -88,6 +82,5 @@ task main() {
 
     while(true) {
 	    joy1Controls();
-	    joy2Controls();
     }
 }
