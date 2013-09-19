@@ -78,39 +78,7 @@ void joy1Controls() {
 
 // ------------------- Joystick 2 (Gunner) Controls ------------------------
 
-int getArmMovement() {  //Gets Arm movement
-	if (joy2Btn(7) == 1) {
-		return 100;
-	}
-	else if(joy2Btn(8) == 1) {
-		return -15;
-	}
-	else return 0;
-}
-
-
-
-int getSpoolMovement() {  //Gets Spool Movement
-	if(joystick.joy2_y1 > 10 || joystick.joy2_y1 < -10) return joystick.joy2_y1;
-	else return 0;
-}
-
-int getClawMovement() { //Gets Claw Movement
-	if(joystick.joy2_y2 > 10 || joystick.joy2_y2 < -10) return joystick.joy2_y2/4;
-	else return 0;
-}
-
-void joy2Controls() {
-	motorSpeedF = getArmMovement();
-	motorSpeedG = getSpoolMovement();
-	motorSpeedA = getClawMovement();
-
-	motor[motorA] = motorSpeedA;
-	motor[motorF] = motorSpeedF;
-	motor[motorG] = motorSpeedG;
-
-	//This motor controls the arm, moving it up and down.
-}
+// Add code later
 
 //--------------------------------- Main --------------------------------
 
